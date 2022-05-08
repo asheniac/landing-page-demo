@@ -18,13 +18,19 @@ const MobileMenu = ({ isOpen, ToggleMobileMenu }) => {
       </Icon>
       <MobileMenuWrapper>
         <MobileMenuUl>
-          <MobileMenuLink to="about">ABOUT</MobileMenuLink>
+          <MobileMenuLink to="about" onClick={ToggleMobileMenu}>
+            ABOUT
+          </MobileMenuLink>
         </MobileMenuUl>
         <MobileMenuUl>
-          <MobileMenuLink to="product">PRODUCT</MobileMenuLink>
+          <MobileMenuLink to="product" onClick={ToggleMobileMenu}>
+            PRODUCT
+          </MobileMenuLink>
         </MobileMenuUl>
         <MobileMenuUl>
-          <MobileMenuLink to="contact">CONTACT</MobileMenuLink>
+          <MobileMenuLink to="contact" onClick={ToggleMobileMenu}>
+            CONTACT
+          </MobileMenuLink>
         </MobileMenuUl>
         <MobileMenuButtonWrap>
           <MobileMenuButton to="signup">Sign UP</MobileMenuButton>

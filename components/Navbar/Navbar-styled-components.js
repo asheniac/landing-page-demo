@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: black;
-  //background: ${({ scroll }) => (scroll ? "black" : "transparent")};
+  //background: black;
+  background: ${({ scroll }) => (scroll ? "#000" : "transparent")};
   height: 80px;
-  //margin-top: -80px;
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@ export const NavLink = styled(ScrollLink)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 0.4rem solid #2ca01c;
   }
 `;
 

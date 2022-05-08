@@ -1,10 +1,23 @@
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
+import ProductSection from "../components/ProductSection";
+import ContactSection from "../components/ContactSection";
+import Head from "next/head";
+
 export default function Home() {
   return (
     <>
-      <AboutSection />
+      <Head>
+        <title>Quick Book - All you need for your accounting matters</title>
+        <meta
+          name="description"
+          content="Quick Book is a professional accounting software which will reduce your time on accounting matter,and let you focus on running your business."
+        ></meta>
+      </Head>
       <HeroSection />
+      <AboutSection />
+      <ProductSection />
+      <ContactSection />
     </>
   );
 }
