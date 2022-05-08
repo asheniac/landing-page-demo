@@ -1,4 +1,5 @@
 import React from "react";
+import NextLink from "next/link";
 import {
   MobileMenuContainer,
   CloseIcon,
@@ -33,7 +34,9 @@ const MobileMenu = ({ isOpen, ToggleMobileMenu }) => {
           </MobileMenuLink>
         </MobileMenuUl>
         <MobileMenuButtonWrap>
-          <MobileMenuButton to="signup">Sign UP</MobileMenuButton>
+          <NextLink href="/signup">
+            <MobileMenuButton>Sign UP</MobileMenuButton>
+          </NextLink>
         </MobileMenuButtonWrap>
       </MobileMenuWrapper>
     </MobileMenuContainer>

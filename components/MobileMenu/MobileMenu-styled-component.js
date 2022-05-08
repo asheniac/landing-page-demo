@@ -70,7 +70,7 @@ export const MobileMenuButtonWrap = styled.div`
   justify-content: center;
 `;
 
-export const MobileMenuButton = styled(ScrollLink)`
+export const MobileMenuButton = styled.a`
   border-radius: 50px;
   background: #2ca01c;
   white-space: nowrap;

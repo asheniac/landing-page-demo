@@ -52,15 +52,12 @@ export default function AboutSection() {
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                   <img
                     className="rounded-lg shadow-lg object-cover object-center"
-                    src="https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80"
-                    alt="Whitney leaning against a railing on a downtown street"
+                    src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE3NDU4MDYy&ixlib=rb-1.2.1&q=80"
+                    alt="Tax withholding form,coffe and calcualtor "
                     width={1184}
                     height={1376}
                   />
                 </div>
-                <figcaption className="mt-3 flex text-sm text-gray-500">
-                  <span className="ml-2">Photograph by Marcus O’Leary</span>
-                </figcaption>
               </figure>
             </div>
           </div>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   HeroSectionContainer,
   HeroSectionBg,
   VideoBg,
-  ImageBg,
   HeroSectionContent,
   HeroSectionTitle,
   HeroSectionInfo,
@@ -38,10 +38,15 @@ const HeroSection = () => {
           commodi! Voluptatem laudantium temporibus quis.
         </HeroSectionInfo>
         <HeroSectionButtonWrapper>
-          <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}>
-            Get Started
-            {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
+          <Link href="/signup">
+            <Button
+              className="flex justify-center items-center"
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+            >
+              Get Started {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </Link>
         </HeroSectionButtonWrapper>
       </HeroSectionContent>
     </HeroSectionContainer>

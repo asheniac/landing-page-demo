@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 import { FaBars } from "react-icons/fa";
-import { animateScroll as scroll } from "react-scroll";
 
 import {
   Nav,
@@ -80,7 +79,9 @@ const Navbar = ({ ToggleMobileMenu }) => {
             </NavLink>
           </NavItem>
           <NavButton>
-            <NavButtonLink to="signup">SIGN UP</NavButtonLink>
+            <NextLink href="/signup">
+              <NavButtonLink>SIGN UP</NavButtonLink>
+            </NextLink>
           </NavButton>
         </NavMenu>
       </Nav>

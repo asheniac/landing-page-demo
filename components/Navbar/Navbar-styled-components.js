@@ -97,7 +97,7 @@ export const NavButton = styled.nav`
   }
 `;
 
-export const NavButtonLink = styled(ScrollLink)`
+export const NavButtonLink = styled.a`
   border-radius: 50px;
   background: #2ca01c;
   white-space: nowrap;

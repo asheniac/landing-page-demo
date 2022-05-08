@@ -1,5 +1,5 @@
 import { CheckIcon } from "@heroicons/react/solid";
-
+import Link from "next/link";
 const plans = [
   {
     title: "Rocket",
@@ -130,17 +130,18 @@ export default function ProductSection() {
                         </p>
                       </div>
                     </div>
-                    <a
-                      href="#"
-                      className={classNames(
-                        plan.featured
-                          ? "bg-[#2ca01c]  text-white hover:bg-white hover:text-[#2ca01c] hover:border-[#2ca01c]"
-                          : "bg-white text-[#2ca01c]  hover:bg-[#2ca01c] hover:text-white hover:border-white",
-                        "mt-6 w-full inline-block py-2 px-8 border border-transparent rounded-md shadow-sm text-center text-sm font-medium sm:mt-0 sm:w-auto lg:mt-6 lg:w-full"
-                      )}
-                    >
-                      Buy {plan.title}
-                    </a>
+                    <Link href="/signup">
+                      <a
+                        className={classNames(
+                          plan.featured
+                            ? "bg-[#2ca01c]  text-white hover:bg-white hover:text-[#2ca01c] hover:border-[#2ca01c]"
+                            : "bg-white text-[#2ca01c]  hover:bg-[#2ca01c] hover:text-white hover:border-white",
+                          "mt-6 w-full inline-block py-2 px-8 border border-transparent rounded-md shadow-sm text-center text-sm font-medium sm:mt-0 sm:w-auto lg:mt-6 lg:w-full"
+                        )}
+                      >
+                        Buy {plan.title}
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <h4 className="sr-only">Features</h4>

@@ -1,8 +1,9 @@
+import { Link as ScrollLink } from "react-scroll";
 const navigation = {
   main: [
-    { name: "About", href: "#" },
-    { name: "Product", href: "#" },
-    { name: "SignIn", href: "#" },
+    { name: "About", href: "about" },
+    { name: "Product", href: "product" },
+    { name: "Contact", href: "contact" },
   ],
   social: [
     {
@@ -53,12 +54,15 @@ export default function Example() {
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a
-                href={item.href}
+              <ScrollLink
+                to={item.href}
+                smooth={true}
+                offset={-80}
+                duration={500}
                 className="text-base text-zinc-50 hover:text-[#2ca01c]"
               >
                 {item.name}
-              </a>
+              </ScrollLink>
             </div>
           ))}
         </nav>

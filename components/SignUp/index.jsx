@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+
 import {
   Container,
   FormWrap,
@@ -9,6 +10,7 @@ import {
   FormH1,
   FormLabel,
   FormInput,
+  FormSelect,
   FormButton,
   Text,
 } from "./Singup-styled-component";
@@ -20,6 +22,14 @@ const SignIn = () => {
     watch,
     formState: { errors },
   } = useForm();
+
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    const countryData = require("../CountryData.json");
+    //console.log(countryData);
+    setCountries(countryData);
+  }, []);
+
   const onSubmit = (data) => console.log(data);
   return (
     <>
@@ -43,13 +53,20 @@ const SignIn = () => {
                 {...register("email", { required: true, maxLength: 40 })}
                 required
               />
-              <FormLabel
-                htmlFor="for"
+              <FormLabel htmlFor="for">Phone (Required)</FormLabel>
+              <FormInput
+                type="text"
                 {...register("phone", { required: true, maxLength: 10 })}
+              />
+              <FormLabel htmlFor="for">Country (Required)</FormLabel>
+              <FormSelect
+                {...register("country", { required: "Country is required" })}
               >
-                Phone (Required)
-              </FormLabel>
-              <FormInput type="text" required />
+                <option value="">--Select Country--</option>
+                {countries.map((item) => {
+                  return <option key={item.country}>{item.country}</option>;
+                })}
+              </FormSelect>
               <FormButton type="submit">Sign Up</FormButton>
               <Text>
                 <Link href="/">
