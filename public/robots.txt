@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.quickbook.com
+
+# Sitemaps
+Sitemap: https://www.quickbook.com/sitemap.xml
