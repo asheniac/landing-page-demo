@@ -52,7 +52,7 @@ export default function AboutSection() {
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                   <img
                     className="rounded-lg shadow-lg object-cover object-center"
-                    src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE3NDU4MDYy&ixlib=rb-1.2.1&q=80"
+                    src={"img/about-pic.png"}
                     alt="Tax withholding form,coffe and calcualtor "
                     width={1184}
                     height={1376}
