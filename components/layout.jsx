@@ -12,7 +12,6 @@ export default function Layout({ children }) {
     setIsOpen(!isOpen);
   };
   const router = useRouter();
-  console.log(router.asPath);
 
   return (
     <>

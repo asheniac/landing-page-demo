@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 import {
   Container,
@@ -19,7 +20,6 @@ const SignIn = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -33,14 +33,10 @@ const SignIn = () => {
 
   const onSubmit = (data) => {
     setFormData(data);
-    //console.log("this is form data", formData);
   };
   useEffect(() => {
-    //console.log("so ok");
     if (Object.keys(formData).length > 0) {
-      //console.log("2nd form data", formData);
       setFormSubmit(true);
-      //console.log("this is formsubmit", formSubmit);
     }
   }, [formData, formSubmit]);
 
@@ -74,43 +70,96 @@ const SignIn = () => {
                 <FormH1>Sign up for your free trail</FormH1>
 
                 <FormLabel htmlFor="firstname">First Name (Required)</FormLabel>
+                <ErrorMessage
+                  errors={errors}
+                  name="firstName"
+                  render={({ message }) => (
+                    <p className="text-red-600">{message}</p>
+                  )}
+                />
                 <FormInput
                   type="text"
                   {...register("firstName", {
-                    required: true,
+                    required: "Frist Name is required",
                     maxLength: 40,
                     pattern: /^[A-Za-z]+$/i,
                   })}
                 />
+
                 <FormLabel htmlFor="lastname">Last Name (Required)</FormLabel>
+                <ErrorMessage
+                  errors={errors}
+                  name="lastName"
+                  render={({ message }) => (
+                    <p className="text-red-600">{message}</p>
+                  )}
+                />
                 <FormInput
                   type="text"
                   {...register("lastName", {
-                    required: true,
+                    required: "Last Name is required",
                     maxLength: 40,
                     pattern: /^[A-Za-z]+$/i,
                   })}
                 />
+
                 <FormLabel htmlFor="email">Email (Required)</FormLabel>
                 <FormInput
                   type="email"
-                  {...register("email", { required: true, maxLength: 40 })}
-                  required
+                  {...register("email", {
+                    required: "Email is required",
+                    maxLength: { value: 40, message: "Max Length is 40 char" },
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                      message: "Email is invalid",
+                    },
+                  })}
+                />
+                <ErrorMessage
+                  errors={errors}
+                  name="email"
+                  render={({ message }) => (
+                    <p className="text-red-600">{message}</p>
+                  )}
                 />
                 <FormLabel htmlFor="phone">Phone (Required)</FormLabel>
+                <ErrorMessage
+                  errors={errors}
+                  name="phone"
+                  render={({ message }) => (
+                    <p className="text-red-600">{message}</p>
+                  )}
+                />
                 <FormInput
                   type="text"
-                  {...register("phone", { required: true, maxLength: 10 })}
+                  {...register("phone", {
+                    required: "Phone Number is required",
+                    maxLength: {
+                      value: 10,
+                      message: "Max number is 10 digital char",
+                    },
+                  })}
                 />
+
                 <FormLabel htmlFor="for">Country (Required)</FormLabel>
+                <ErrorMessage
+                  errors={errors}
+                  name="country"
+                  render={({ message }) => (
+                    <p className="text-red-600">{message}</p>
+                  )}
+                />
                 <FormSelect
-                  {...register("country", { required: "Country is required" })}
+                  {...register("country", {
+                    required: "You must select country",
+                  })}
                 >
                   <option value="">--Select Country--</option>
                   {countries.map((item) => {
                     return <option key={item.country}>{item.country}</option>;
                   })}
                 </FormSelect>
+
                 <FormButton type="submit">Sign Up</FormButton>
                 <Text>
                   <Link href="/">
